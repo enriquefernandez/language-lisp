@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "A short description of your package",
-  "repository": "https://github.com/atom/language-lisp",
+  "repository": "https://github.com/enriquefernandez/language-lisp",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
