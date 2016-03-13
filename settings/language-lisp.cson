@@ -3,3 +3,5 @@
     'commentStart': '; '
     'tabLength': 2
     'increaseIndentPattern': '^.*\\(.*[^)"]$'
+  "bracket-matcher":
+    autocompleteBrackets: false
