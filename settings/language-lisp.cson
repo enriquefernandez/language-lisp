@@ -1,7 +1,7 @@
 '.source.lisp':
-  'editor':
-    'commentStart': '; '
-    'tabLength': 2
-    'increaseIndentPattern': '^.*\\(.*[^)"]$'
+  editor:
+    commentStart: '; '
+    tabLength: 2
+    increaseIndentPattern: '^.*\\(.*[^)"]$'
   "bracket-matcher":
     autocompleteBrackets: false
