@@ -2,6 +2,8 @@
   editor:
     commentStart: '; '
     tabLength: 2
-    increaseIndentPattern: '^.*\\(.*[^)"]$'
+    # TODO nedělá, co by mělo
+    #increaseIndentPattern: '^.*\\(.*[^)"]$'
+  # TODO nefunguje
   "bracket-matcher":
     autocompleteBrackets: false

@@ -1,3 +1,4 @@
+name: 'Lisp'
 scopeName: 'source.lisp'
 fileTypes: [
   'lisp'
@@ -6,7 +7,6 @@ fileTypes: [
   'mud'
   'el'
 ]
-name: 'Lisp'
 foldingStartMarker: '\\(\\s*$'
 foldingStopMarker: '^\\s*\\)'
 patterns: [
