@@ -1,6 +1,7 @@
 'comment': ''
 'fileTypes': [
   'lisp'
+  'lsp'
   'cl'
   'l'
   'mud'
