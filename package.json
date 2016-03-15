@@ -1,6 +1,6 @@
 {
   "name": "language-lisp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "description": "Lisp support for Atom (converted from Textmate bundle)",
   "repository": "https://github.com/enriquefernandez/language-lisp",
