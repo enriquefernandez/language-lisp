@@ -2,6 +2,7 @@ name: 'Lisp'
 scopeName: 'source.lisp'
 fileTypes: [
   'lisp'
+  'lsp'
   'cl'
   'l'
   'mud'
