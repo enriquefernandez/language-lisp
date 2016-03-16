@@ -38,3 +38,6 @@
   'setf':
     'prefix': 'setf'
     'body': '(setf ${1:place} ${2:value})'
+  'progn':
+    'prefix': 'progn'
+    'body': '(progn\n\t$0)'
