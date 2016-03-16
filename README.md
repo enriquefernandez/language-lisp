@@ -6,5 +6,5 @@ Some effort to properly customize this package for Atom might still be needed.
 Lisp is a big family of programming languages. This package is primarily intended for the most popular Lisp dialect – the Common Lisp.
 
 For proper Lisp indentation and better editing experience this package should be used in conjunction with some advanced editing tool:
-- [Parinfer](https://atom.io/packages/parinfer) (suitable for beginners and gurus alike; automatically manages parenthesses based on indentation)
+- [Parinfer](https://atom.io/packages/parinfer) (suitable for beginners and gurus alike; automatically manages parentheses based on indentation)
 - [Paredit](https://atom.io/packages/lisp-paredit) (recommended for advanced users; manipulates code as abstract syntax tree)
