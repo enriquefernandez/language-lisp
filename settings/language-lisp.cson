@@ -2,6 +2,6 @@
   editor:
     commentStart: '; '
     tabLength: 2
-  # TODO Following does not work!
+  # FIXME Following does not work!
   "bracket-matcher":
     autocompleteBrackets: false
