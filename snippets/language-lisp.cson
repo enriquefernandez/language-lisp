@@ -1,34 +1,43 @@
 '.source.lisp':
-  '\'(':
-    'prefix': '('
-    'body': '\'('
-  '`(':
-    'prefix': '('
-    'body': '\\`('
-  'defconstant':
-    'prefix': 'const'
-    'body': '(defconstant +${1:name}+ ${2:value}\n\t"${3:Documentation for $1.}"))'
-  'defmacro':
-    'prefix': 'mac'
-    'body': '(defmacro ${1:name} (${2:parameters})\n\t"${3:Documentation for $1.}"\n\t($0))'
-  'defparameter':
-    'prefix': 'par'
-    'body': '(defparameter *${1:name}* ${2:value}\n\t"${3:Documentation for $1.}")'
-  'defun':
-    'prefix': 'fun'
-    'body': '(defun ${1:name} (${2:parameters})\n\t"${3:Documentation for $1.}"\n\t($0))'
-  'defvar':
-    'prefix': 'var'
-    'body': '(defvar *${1:name}* ${2:value}\n\t"${3:Documentation for $1.}")'
-  'if':
-    'prefix': 'if'
-    'body': '(if (${1:test})\n\t($0))'
-  'let':
-    'prefix': 'let'
-    'body': '(let (${1:variables})\n\t($0))'
-  'let1':
-    'prefix': 'let1'
-    'body': '(let ((${1:variable} ${2:value}))\n\t($0))'
-  'setf':
-    'prefix': 'setf'
-    'body': '(setf ${1:place} ${2:value})'
+  quoted:
+    prefix: 'quo'
+    body: '\'($0)'
+  backquoted:
+    prefix: 'bq'
+    body: '\`($0)'
+  defconstant:
+    prefix: 'const'
+    body: '(defconstant +${1:name}+ ${2:value}\n\t"${3:Documentation for $1.}"))'
+  defmacro:
+    prefix: 'mac'
+    body: '(defmacro ${1:name} (${2:parameters})\n\t"${3:Documentation for $1.}"\n\t($0))'
+  defparameter:
+    prefix: 'par'
+    body: '(defparameter *${1:name}* ${2:value}\n\t"${3:Documentation for $1.}")'
+  defun:
+    prefix: 'fun'
+    body: '(defun ${1:name} (${2:parameters})\n\t"${3:Documentation for $1.}"\n\t($0))'
+  defvar:
+    prefix: 'var'
+    body: '(defvar *${1:name}* ${2:value}\n\t"${3:Documentation for $1.}")'
+  defclass:
+    prefix: 'class'
+    body: '(defclass ${1:name} (${2:superclass})\n\t"${3:Documentation for $1.}"\n\t($0))'
+  defmethod:
+    prefix: 'meth'
+    body: '(defmethod ${1:name} ((self ${2:class}))\n\t"${3:Documentation for $1.}"\n\t($0))'
+  if:
+    prefix: 'if'
+    body: '(if (${1:test})\n\t($0))'
+  let:
+    prefix: 'let'
+    body: '(let (${1:variables})\n\t($0))'
+  "let value":
+    prefix: 'let1'
+    body: '(let ((${1:variable} ${2:value}))\n\t($0))'
+  setf:
+    prefix: 'setf'
+    body: '(setf ${1:place} ${2:value})'
+  progn:
+    prefix: 'progn'
+    body: '(progn\n\t$0)'
