@@ -8,6 +8,7 @@ fileTypes: [
   'mud'
   'el'
   'scm'
+  'rkt'
 ]
 foldingStartMarker: '\\(\\s*$'
 foldingStopMarker: '^\\s*\\)'
