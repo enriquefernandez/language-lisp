@@ -7,6 +7,8 @@ fileTypes: [
   'l'
   'mud'
   'el'
+  'asd'
+  'sbclrc'
 ]
 foldingStartMarker: '\\(\\s*$'
 foldingStopMarker: '^\\s*\\)'
@@ -19,7 +21,7 @@ patterns: [
     name: 'comment.line.semicolon.lisp'
   }
   {
-    match: '(\\b(?i:(defun|labels|defmacro|defstruct|defclass|defmethod|defconstant|defparameter|defvar))\\b)(\\s+)((\\w|\\-|\\!|\\?)*)'
+    match: '(\\b(?i:(defun|labels|defmacro|defstruct|defclass|defmethod|defconstant|defparameter|defvar))\\b)(\\s+)((\\w|\\-|\\!|\\?|\\/|\\+|\\>)*)' # allowing to capture function names such as 'thing1->thing2', 'w/out-this', etc.
     captures:
       2:
         name: 'storage.type.function-type.lisp'
@@ -28,7 +30,7 @@ patterns: [
     name: 'meta.function.lisp'
   }
   {
-    match: '(#)(\\w|[\\\\+-=<>\'"&#])+'
+    match: '(#)(\\w|[\\\\+-=<>\'&#]|\\"\\s+)+' # as it was, pathnames were breaking the grammar. this way, it still captures the quote character literal, but in pathnames only the hash + p sequence is captured, and the following namestring is captured as a string
     captures:
       1:
         name: 'punctuation.definition.constant.lisp'
@@ -62,7 +64,7 @@ patterns: [
     name: 'constant.other.global.lisp'
   }
   {
-    match: '\\b(?i:let|let\\*|case|do|dolist|dotimes|loop|if|cond|when|unless)\\b'
+    match: '\\b(?i:destructuring\\-bind|with\\-open\\-file|return\\-from|tree\\-equal|pathnamep|y\\-or\\-n\\-p|dotimes|fboundp|numberp|stringp|string=|symbolp|boundp|dolist|labels|lambda|let\\*|notany|return|unless|acond|consp|do\\*|equal|every|listp|aand|atom|cond|flet|loop|null|some|time|when|aif|and|eql|let|not|do|eq|if|or)\\b' # You are the creator of this grammar, and I respect your decisions regarding it. That said, in line with my own sensibilities, I've clustered keywords here that involve tests and controls. Most could also go in the next match pattern, but because their colors are the same, I default to adding them here. Wherever you put them, you may at least want to increase the number of recognized keywords.
     name: 'keyword.control.lisp'
   }
   {
@@ -74,7 +76,7 @@ patterns: [
     name: 'constant.language.boolean.nil.lisp'
   }
   {
-    match: '\\b(?i:cons|car|cdr|lambda|format|print|setq|setf|quote|eval|append|list|listp|memberp|load|progn|apply|mapcar)\\b'
+    match: '\\b(?i:remove\\-duplicates|read\\-from\\-string|directory\\-files|make\\-hash\\-table|launch\\-program|set\\-difference|subdirectories|remove\\-if\\-not|nsubstitute|rename\\-file|run\\-program|namestring|probe\\-file|substitute|copy\\-list|copy\\-tree|remove\\-if|describe|nreverse|butlast|funcall|gethash|inspect|pushnew|reverse|untrace|append|delete|format|getcwd|length|mapcan|mapcar|member|nsubst|remove|search|second|apply|assoc|chdir|first|nconc|print|progn|prog1|prog2|quote|sleep|subst|third|trace|union|caar|cons|eval|last|list|load|mapc|push|read|rest|setf|setq|car|cdr)\\b' # similarly, I've expanded the number of function-like keywords that are recognized. In my personal version, I have a script that accepts an arbitrary number of files and automatically extracts all user defined function and macro names from those files and adds them either here or, if they end in -p, in line 67. Let me know if you're interested in this script. I'll continue to expand the core function and control lists as I notice holes, so also please let me know if you're interested in me periodically pushing changes.
     name: 'support.function.lisp'
   }
   {
